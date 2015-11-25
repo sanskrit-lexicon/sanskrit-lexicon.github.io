@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta charset="UTF-8">
+  <title>MW Advanced</title>
+    <link rel="stylesheet" type="text/css" href="index_files/main.css" media="screen">
+  <script src="index_files/piwik.js" async="" defer="defer" type="text/javascript"></script><script type="text/javascript" src="index_files/jquery_002.js"></script>
+  <script type="text/javascript" src="index_files/jquery.js"></script>
+  <script type="text/javascript" src="index_files/main.js"> </script>
+	<script type="text/javascript" src="hilitor-utf8.js"></script>
+	<script type="text/javascript">
+
+	  var myHilitor2;
+	  document.addEventListener("DOMContentLoaded", function() {
+		myHilitor2 = new Hilitor2("data");
+		myHilitor2.setMatchType("left");
+		myHilitor2.apply("Siva");
+	  }, false);
+
+	</script>
+<style>
+#dictid {
+ /*position:absolute;*/
+ padding-top:15px;
+ margin-left:10px;
+ font-size:14pt;
+ width:100%;
+ text-align:left;
+}
+#querytable {
+ /*position:absolute;*/
+ top: 80px;
+ left:5px;
+}
+#title {
+font-family: verdana,arial,helvetica,sansserif;
+font-size: 14pt;
+}
+</style>
+</head>
+
+ <body>
+<div id="querydiv">
+ <div id="dictid"> 
+     <a href="http://www.sanskrit-lexicon.uni-koeln.de/" style="background-color:#DBE4ED">
+     <img id="unilogo" src="index_files/cologne_univ_seal.gif" alt="University of Cologne" title="Cologne Sanskrit Lexicon" height="60" width="60"></a>
+     <span id="title">Monier-Williams Sanskrit-English Dictionary, 1899</span>
+ </div>
+
+<select name="outopt" id="outopt" style="display:none">
+  <option value="outopt4" selected="selected">standard</option>
+ </select><table id="querytable" border="0" cellpadding="3" cellspacing="1">
+<tbody><tr>
+<td>Sanskrit word:
+&nbsp;&nbsp;
+    <select name="swordhw" id="swordhw">
+     <option value="both" selected="selected">Headword or Text</option>
+     <option value="hwonly">Headword Only</option>
+     <option value="textonly">Text Only</option>
+    </select>
+</td>
+<td>
+<input value="Siva" name="sword" id="sword" size="30" type="text">
+<select name="sregexp" id="sregexp">
+     <option value="exact" selected="selected">exact</option>
+     <option value="prefix">prefix</option>
+     <option value="suffix">suffix</option>
+     <option value="instring">infix</option>
+     <option value="substring">substring</option>
+    </select>
+    <select name="transLit" id="transLit">
+     <option value="hk">Kyoto-Harvard</option>
+     <option selected="selected" value="slp1">SLP1</option>
+     <option value="itrans">ITRANS</option>
+    </select>
+
+</td>
+</tr>
+<tr>
+<td>Text Word:</td>
+<td>
+<input name="word" id="word" size="30">
+
+<select name="regexp" id="regexp">
+     <option value="exact" selected="selected">exact</option>
+     <option value="prefix">prefix</option>
+     <option value="suffix">suffix</option>
+     <option value="instring">infix</option>
+     <option value="substring">substring</option>
+    </select>
+   <!--any case: -->
+    <input id="scase" name="scase" checked="checked" style="visibility:hidden;" type="checkbox">
+
+</td>
+</tr>
+
+<tr>
+<td>Maximum:</td>
+<td>
+<select name="max" id="max">
+<option value="5">5</option>
+<option value="20" selected="selected">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+<option value="500">500</option>
+<option value="1000">1000</option>
+<option value="1000000">all</option>
+</select> 
+    &nbsp;output:
+    <select name="filter" id="filter">
+     <option value="deva">Devanagari Unicode</option>
+     <option value="roman">Roman Unicode</option>
+     <option value="hk">HK</option>
+     <option selected="selected" value="slp1">SLP1</option>
+     <option value="itrans">ITRANS</option>
+    </select>
+    &nbsp; &nbsp;
+<select name="accent" id="accent">
+ <option value="yes">Show Accents</option>
+ <option value="no" selected="selected">Ignore Accents</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<!-- keep this element present, though undisplayed,
+  as Javascript looks for 'outopt' element
+-->
+ 
+
+<td>
+    &nbsp;<a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc2/help.html">Help</a>
+    &nbsp;&nbsp;
+    <a href="http://www.sanskrit-lexicon.uni-koeln.de/php/correction_form.php?dict=MW" target="Corrections">Corrections</a>
+
+</td>
+<td>
+<input onclick="getWord();" value="Search" id="searchbtn" type="button">
+<input style="display: inline;" onclick="getNext();" value="Next" id="nextbtn" type="button">
+<input style="display: none;" value="working..." id="workbtn" type="button">
+
+</td>
+</tr></tbody></table>
+
+  </div> <!-- end of querydiv -->
+<!-- hidden, used with cookies -->
+<input name="input" id="input_input" value="slp1" style="visibility:hidden"> 
+<input name="output" id="input_output" value="slp1" style="visibility:hidden">
+ <div id="disp"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<p class="words">
+1 <!-- akutaScana --><a class="words" onclick='getWord4("1");'>akutaScana</a><br>
+2 <!-- akutaScala --><a class="words" onclick='getWord4("2");'>akutaScala</a><br>
+3 <!-- akula --><a class="words" onclick='getWord4("3");'>akula</a><br>
+4 <!-- akzamAlin --><a class="words" onclick='getWord4("4");'>akzamAlin</a><br>
+5 <!-- akzata --><a class="words" onclick='getWord4("5");'>akzata</a><br>
+6 <!-- akzayaguRa --><a class="words" onclick='getWord4("6");'>akzayaguRa</a><br>
+7 <!-- akzayapuruhUta --><a class="words" onclick='getWord4("7");'>akzayapuruhUta</a><br>
+8 <!-- akzara --><a class="words" onclick='getWord4("8");'>akzara</a><br>
+9 <!-- agastya --><a class="words" onclick='getWord4("9");'>agastya</a><br>
+10 <!-- agnijvAla --><a class="words" onclick='getWord4("10");'>agnijvAla</a><br>
+11 <!-- agnilocana --><a class="words" onclick='getWord4("11");'>agnilocana</a><br>
+12 <!-- aGaRwa --><a class="words" onclick='getWord4("12");'>aGaRwa</a><br>
+13 <!-- aGora --><a class="words" onclick='getWord4("13");'>aGora</a><br>
+14 <!-- aGorA --><a class="words" onclick='getWord4("14");'>aGorA</a><br>
+15 <!-- aGoraGorarUpa --><a class="words" onclick='getWord4("15");'>aGoraGorarUpa</a><br>
+16 <!-- acala --><a class="words" onclick='getWord4("16");'>acala</a><br>
+17 <!-- acintya --><a class="words" onclick='getWord4("17");'>acintya</a><br>
+18 <!-- aja --><a class="words" onclick='getWord4("18");'>aja</a><br>
+19 <!-- ajakava --><a class="words" onclick='getWord4("19");'>ajakava</a><br>
+20 <!-- ajakAva --><a class="words" onclick='getWord4("20");'>ajakAva</a><br>
+</p>
+</div>
+  <div id="data"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<span class="key" id="record_1"></span>
+<h1>&nbsp;akutaScana</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">a-kutaS--cana</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,1]</span><span class="smaller"> [L=284.1]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font>, <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;</td></tr>
+</tbody></table>
+<span class="key" id="record_2"></span>
+<h1>&nbsp;akutaScala</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">akutaS-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=2" target="_Blank">2</a>,2]</span><span class="smaller"> [L=285]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> not movable from any cause  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=2" target="_Blank">2</a>,2]</span><span class="smaller"> [L=286]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font>.   </td></tr>
+</tbody></table>
+<span class="key" id="record_3"></span>
+<h1>&nbsp;akula</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-kula</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=2" target="_Blank">2</a>,2]</span><span class="smaller"> [L=298]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> not of good family, low  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kula</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=2" target="_Blank">2</a>,2]</span><span class="smaller"> [L=299]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kula</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,1]</span><span class="smaller"> [L=300.2]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <span title="particular"><font color="#006600" size="-1">partic.</font></span> lunar mansions.</td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,1]</span><span class="smaller"> [L=300.3]</span></b></td>
+<td class="display" valign="top"> (in <span title="astronomy"><font color="#006600" size="-1">astron.</font></span>) <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of Sunday, Monday, Thursday, and Saturday</td></tr>
+</tbody></table>
+<span class="key" id="record_4"></span>
+<h1>&nbsp;akzamAlin</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">akza--mAlin</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=498]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> wearing a rosary of seeds  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=499]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_MBh_")'>MBh.</a></span>&nbsp;   </td></tr>
+</tbody></table>
+<span class="key" id="record_5"></span>
+<h1>&nbsp;akzata</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-kzata</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=542]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> not crushed  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=543]</span></b></td>
+<td class="display" valign="top">  uninjured, unbroken, whole  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,2]</span><span class="smaller"> [L=543.1]</span></b></td>
+<td class="display" valign="top">  (also) unthrashed, <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_Gobh_")'>Gobh.</a></span>&nbsp;</td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzata</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=544]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">Siva</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzata</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=545]</span></b></td>
+<td class="display" valign="top"> <em>mn.</em> a eunuch <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzata</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=548]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> and <em>m. </em><em title="plural"><font color="#004400">pl.</font></em> unhusked barley-corns  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzata</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=549]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of the descendants of <font class="sdata">suraBi</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_Hariv_")'>Hariv.</a></span>&nbsp;    </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzata</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,2]</span><span class="smaller"> [L=549.2]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <em title="neuter gender"><font color="#004400">n.</font></em> (also) a boil or sore not produced by cutting, <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_Kaus3_")'>Kauṡ.</a></span>&nbsp;</td></tr>
+</tbody></table>
+<span class="key" id="record_6"></span>
+<h1>&nbsp;akzayaguRa</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">a-kzaya--guRa</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=562]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> possessing imperishable qualities  </td></tr>
+<tr><td class="display" valign="top"><b>(H3B)&nbsp;<font class="sdata">a-kzaya--guRa</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=563]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">Siva</font>.   </td></tr>
+</tbody></table>
+<span class="key" id="record_7"></span>
+<h1>&nbsp;akzayapuruhUta</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">a-kzaya--puruhUta</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=568]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">Siva</font>.   </td></tr>
+</tbody></table>
+<span class="key" id="record_8"></span>
+<h1>&nbsp;akzara</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=577]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> imperishable  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=578]</span></b></td>
+<td class="display" valign="top">  unalterable  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=579]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> a sword <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=580]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">Siva</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=581]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">vizRu</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=583]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> a syllable  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=584]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> the syllable <span class="sdata">om</span> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_Mn_")'>Mn.</a></span>&nbsp;   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=585]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> a letter ([<em title="masculine gender"><font color="#004400">m.</font></em> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_Ra1matUp_")'>RāmatUp.</a></span>&nbsp;])   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=586]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> a vowel   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=587]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> a sound   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=588]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> a word   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,2]</span><span class="smaller"> [L=588.1]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> an indelible mark incised on metal or stone</td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=589]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">brahma</font>   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,2]</span><span class="smaller"> [L=590]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> final beatitude religious austerity, sacrifice <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,3]</span><span class="smaller"> [L=591]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> water <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_RV_")'>RV.</a></span>&nbsp;<font color="#004400" size="-1"> i, 34, 4 and i, 164, 42</font>   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=3" target="_Blank">3</a>,3]</span><span class="smaller"> [L=592]</span></b></td>
+<td class="display" valign="top"> <em title="neuter gender"><font color="#004400">n.</font></em> <font color="brown" size="-1">Achyranthes</font> <font color="brown" size="-1">Aspera</font>.    </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,2]</span><span class="smaller"> [L=592.1]</span></b></td>
+<td class="display" valign="top"> (also) <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of a <font class="sdata">sAman</font>, <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_A1rshBr_")'>ĀrshBr.</a></span>&nbsp;</td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-kzara</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1308" target="_Blank">1308</a>,2]</span><span class="smaller"> [L=592.2]</span></b></td>
+<td class="display" valign="top"> (erase "Achyranthes Aspera")</td></tr>
+</tbody></table>
+<span class="key" id="record_9"></span>
+<h1>&nbsp;agastya</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H2)&nbsp;<font class="sdata">agastya</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=4" target="_Blank">4</a>,3]</span><span class="smaller"> [L=827]</span></b></td>
+<td class="display" valign="top">  <em title="masculine gender"><font color="#004400">m.</font></em> (3, 4) <font color="purple">=</font> <span class="sdata">agasti</span>    </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=4" target="_Blank">4</a>,3]</span><span class="smaller"> [L=827.1]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;    </td></tr>
+</tbody></table>
+<span class="key" id="record_10"></span>
+<h1>&nbsp;agnijvAla</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">agni--jvAla</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=5" target="_Blank">5</a>,2]</span><span class="smaller"> [L=941]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font>  </td></tr>
+</tbody></table>
+<span class="key" id="record_11"></span>
+<h1>&nbsp;agnilocana</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">agni--locana</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1309" target="_Blank">1309</a>,1]</span><span class="smaller"> [L=1044.1]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> fiery-eyed, <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font>, <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_Gal_")'>Gal.</a></span>&nbsp;</td></tr>
+</tbody></table>
+<span class="key" id="record_12"></span>
+<h1>&nbsp;aGaRwa</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-GaRwa</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=1309" target="_Blank">1309</a>,1]</span><span class="smaller"> [L=1381.1]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> (<span title="confer, compare"><font color="#006600" size="-1">cf.</font></span> <span class="sdata">GaRwa</span>) <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font>, <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_MBh_")'>MBh.</a></span>&nbsp;</td></tr>
+</tbody></table>
+<span class="key" id="record_13"></span>
+<h1>&nbsp;aGora</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-Gora</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=7" target="_Blank">7</a>,1]</span><span class="smaller"> [L=1392]</span></b></td>
+<td class="display" valign="top">  <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> not terrific    </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-Gora</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=7" target="_Blank">7</a>,1]</span><span class="smaller"> [L=1392.1]</span></b></td>
+<td class="display" valign="top">  <em title="masculine gender"><font color="#004400">m.</font></em> a euphemistic title of <font class="sdata">Siva</font>   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-Gora</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=7" target="_Blank">7</a>,1]</span><span class="smaller"> [L=1393]</span></b></td>
+<td class="display" valign="top">  <em title="masculine gender"><font color="#004400">m.</font></em> a worshipper of <font class="sdata">Siva</font> and <font class="sdata">durgA</font>   </td></tr>
+</tbody></table>
+<span class="key" id="record_14"></span>
+<h1>&nbsp;aGorA</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-GorA</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=7" target="_Blank">7</a>,1]</span><span class="smaller"> [L=1394]</span></b></td>
+<td class="display" valign="top"> <em title="feminine"><font color="#004400">f.</font></em> the fourteenth day of the dark half of <font class="sdata">BAdra</font>, which is sacred to <font class="sdata">Siva</font>.   </td></tr>
+</tbody></table>
+<span class="key" id="record_15"></span>
+<h1>&nbsp;aGoraGorarUpa</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H3)&nbsp;<font class="sdata">a-Gora--Gora-rUpa</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=7" target="_Blank">7</a>,1]</span><span class="smaller"> [L=1396]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> " having a form or nature both not terrific and terrific ", <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_MBh_")'>MBh.</a></span>&nbsp;   </td></tr>
+</tbody></table>
+<span class="key" id="record_16"></span>
+<h1>&nbsp;acala</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1790]</span></b></td>
+<td class="display" valign="top"> <em>mf</em>(<span class="sdata">A</span>)<em title="neuter gender"><font color="#004400">n.</font></em> not moving, immovable  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1791]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> a mountain, rock  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1792]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> a bolt or pin   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1793]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> the number seven   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1794]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font> and of the first of the nine deified persons, called " white <font class="sdata">bala</font>s " among the <font class="sdata">jEna</font>s   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1795]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> of a <font class="sdata">devarzi</font> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_VP_")'>VP.</a></span>&nbsp;   </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-cala</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=8" target="_Blank">8</a>,3]</span><span class="smaller"> [L=1797]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> one of the ten degrees which are to be ascended by a <font class="sdata">boDisattva</font> before becoming a <font class="sdata">budDa</font>.    </td></tr>
+</tbody></table>
+<span class="key" id="record_17"></span>
+<h1>&nbsp;acintya</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H2)&nbsp;<font class="sdata">a-cintya</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,1]</span><span class="smaller"> [L=1828]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> inconceivable, surpassing thought <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_MaitrS_")'>MaitrS.</a></span>&nbsp;<font color="#004400" size="-1"> </font><span class="smaller"> &amp;c </span>  </td></tr>
+<tr><td class="display" valign="top"><b>(H2B)&nbsp;<font class="sdata">a-cintya</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,1]</span><span class="smaller"> [L=1829]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">Siva</font>.   </td></tr>
+</tbody></table>
+<span class="key" id="record_18"></span>
+<h1>&nbsp;aja</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H2)&nbsp;<font class="sdata">aja</font><span class="red">&nbsp;1</span><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1928]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> a drove, troop (of <font class="sdata">marut</font>s) <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_AV_")'>AV.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1929]</span></b></td>
+<td class="display" valign="top">  a driver, mover, instigator, leader  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1930]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of <font class="sdata">indra</font>, of <font class="sdata">rudra</font>, of one of the <font class="sdata">marut</font>s ([<span class="sdata">aja eka-pA</span> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_RV_")'>RV.</a></span>&nbsp;<font color="#004400" size="-1">, and</font> <span class="sdata">aja eka-pAda</span> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_AV_")'>AV.</a></span>&nbsp;]), of <font class="sdata">agni</font>, of the sun, of <font class="sdata">brahmA</font>, of <font class="sdata">vizRu</font>, of <font class="sdata">Siva</font>, of <font class="sdata">kAma</font> (<span title="confer, compare"><font color="#006600" size="-1">cf.</font></span> 2. <span class="sdata">a-ja</span>)  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1931]</span></b></td>
+<td class="display" valign="top">  the leader of a flock  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1932]</span></b></td>
+<td class="display" valign="top">  a he-goat, ram ([<span title="confer, compare"><font color="#006600" size="-1">cf.</font></span> <span title="Greek"><font color="#006600" size="-1">Gk.</font></span> <a target="perseus" href="http://www.perseus.tufts.edu/hopper/morph?la=greek&amp;l=AI%29/C"><span class="greek">αἴξ</span></a> ,<a target="perseus" href="http://www.perseus.tufts.edu/hopper/morph?la=greek&amp;l=AI%29GO/S"><span class="greek">αἰγός</span></a>  ;  <span title="Lithuanian"><font color="#006600" size="-1">Lith.</font></span> oẓys ])  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1933]</span></b></td>
+<td class="display" valign="top">  the sign Aries  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1934]</span></b></td>
+<td class="display" valign="top">  the vehicle of <font class="sdata">agni</font>  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1935]</span></b></td>
+<td class="display" valign="top">  beam of the sun (<font class="sdata">pUzan</font>)  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1936]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of a descendant of <font class="sdata">viSvAmitra</font>, and of <font class="sdata">daSaraTa</font>'s or <font class="sdata">dIrGabAhu</font>'s father  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1937]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of a mineral substance  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1938]</span></b></td>
+<td class="display" valign="top">  of a kind of rice  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1939]</span></b></td>
+<td class="display" valign="top">  of the moon  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1940]</span></b></td>
+<td class="display" valign="top">  <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of a people <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_RV_")'>RV.</a></span>&nbsp;<font color="#004400" size="-1"> vii, 18, 19</font>  </td></tr>
+<tr><td class="display" valign="top"><b><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,2]</span><span class="smaller"> [L=1941]</span></b></td>
+<td class="display" valign="top">  of a class of <font class="sdata">fzi</font>s <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_MBh_")'>MBh.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">a-ja</font><span class="red">&nbsp;2</span><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2034]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> not born, existing from all eternity  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-ja</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2035]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of the first uncreated being <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_RV_")'>RV.</a></span>&nbsp; <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_AV_")'>AV.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b>(H1B)&nbsp;<font class="sdata">a-ja</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2036]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">brahmA</font>, <font class="sdata">vizRu</font>, <font class="sdata">Siva</font>, <font class="sdata">kAma</font>  </td></tr>
+</tbody></table>
+<span class="key" id="record_19"></span>
+<h1>&nbsp;ajakava</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H1)&nbsp;<font class="sdata">ajakava</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2038]</span></b></td>
+<td class="display" valign="top"> <em title="masculine gender"><font color="#004400">m.</font></em> <font class="sdata">Siva</font>'s bow <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;    </td></tr>
+</tbody></table>
+<span class="key" id="record_20"></span>
+<h1>&nbsp;ajakAva</h1>
+<table class="display">
+<tbody><tr><td class="display" valign="top"><b>(H2)&nbsp;<font class="sdata">ajakAva</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2039]</span></b></td>
+<td class="display" valign="top"> <em title="masculine, feminine and neuter; or adjective"><font color="#004400">mfn.</font></em> <span title="Name (also title or epithet)"><font color="#006600" size="-1">N.</font></span> of a sacrificial vessel dedicated to <font class="sdata">mitra</font> and <font class="sdata">varuRa</font> and (according to the <span title="commentator or commentary"><font color="#006600" size="-1">Comm.</font></span>) having an ornament similar to the fleshy protuberance called <span class="sdata">ajA-gala-stana</span> <span title="quod vide"><font color="#006600" size="-1">q.v.</font></span> <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_S3Br_")'>ṠBr.</a></span>&nbsp;  </td></tr>
+<tr><td class="display" valign="top"><b>(H2B)&nbsp;<font class="sdata">ajakAva</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2040]</span></b></td>
+<td class="display" valign="top"> <em>mn.</em> a species of venomous vermin, centipede or scorpion <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_RV_")'>RV.</a></span>&nbsp;<font color="#004400" size="-1"> vii, 50, 1</font>  </td></tr>
+<tr><td class="display" valign="top"><b>(H2B)&nbsp;<font class="sdata">ajakAva</font><span class="smaller"> [p= <a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2014/web/webtc/servepdf.php?page=9" target="_Blank">9</a>,3]</span><span class="smaller"> [L=2041]</span></b></td>
+<td class="display" valign="top"> <em>mn.</em> <font class="sdata">Siva</font>'s bow <span class="blue smaller"><a href='javascript:winls("mwauth_slp1.html","record_L_")'>L.</a></span>&nbsp;    </td></tr>
+</tbody></table>
+</div>
+
+<script type="text/javascript" src="index_files/piwik_analytics.js"></script>
+
+
+</body></html>
