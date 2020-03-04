@@ -1,0 +1,6 @@
+temp*
+*~
+# python compile files
+*.pyc
+__pycache__
+
