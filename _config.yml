@@ -1,0 +1,19 @@
+# Jekyll config for the Cologne Digital Sanskrit Lexicon org landing site.
+# GitHub Pages builds this with jekyll-seo-tag included by default. This file
+# supplies the site URL and a default social-card image so every page emits a
+# valid og:image / twitter:image for link unfurls.
+url: https://sanskrit-lexicon.github.io
+title: Cologne Digital Sanskrit Lexicon
+description: >-
+  The open, canonical corpus of Sanskrit dictionaries — 13 years of volunteer
+  digitisation and correction of Monier-Williams, the Petersburg Wörterbücher,
+  and the classical koshas, published as citable, reproducible open data.
+
+# Give every page a default Open Graph / Twitter card image (jekyll-seo-tag
+# reads page.image; this default applies it site-wide). Absolute path resolves
+# against `url` above → https://sanskrit-lexicon.github.io/cdsl-card.png
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /cdsl-card.png

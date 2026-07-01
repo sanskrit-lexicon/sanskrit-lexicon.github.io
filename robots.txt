@@ -1,7 +1,10 @@
 # robots.txt for https://sanskrit-lexicon.github.io/
-# Allow all well-behaved crawlers; advertise the csl-guides sitemap so search
-# engines can discover the documentation site under /csl-guides/.
+# This file lives at the domain root, so it is the authoritative robots.txt for
+# every project page under the host. Allow all well-behaved crawlers and
+# advertise each project site's sitemap so search engines can discover them.
 User-agent: *
 Allow: /
 
 Sitemap: https://sanskrit-lexicon.github.io/csl-guides/sitemap.xml
+Sitemap: https://sanskrit-lexicon.github.io/csl-observatory/sitemap.xml
+Sitemap: https://sanskrit-lexicon.github.io/csl-atlas/sitemap.xml
