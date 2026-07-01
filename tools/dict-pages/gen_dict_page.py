@@ -266,11 +266,149 @@ def build(repo):
     return TEMPLATE.format(**ctx)
 
 
+# --- Org-root hub page (index.html linking every dictionary + the tool sites) ---
+
+# Analysis / tool sites in the org, linked from the hub.
+TOOLS = [
+    ("csl-app", "Dictionary app", "Search 49 dictionaries in your browser — offline-capable, no install."),
+    ("csl-guides", "Guides & docs", "User, contributor, and developer documentation for the CDSL."),
+    ("csl-atlas", "Atlas", "Comparative microstructural analysis across the Cologne dictionaries."),
+    ("csl-observatory", "Observatory", "Repository, contributor, and correction-quality metrics for the ecosystem."),
+]
+
+
+def _group_key(lang):
+    if "→ English" in lang:
+        return (0, "Sanskrit–English dictionaries")
+    if "→ German" in lang:
+        return (1, "Sanskrit–German dictionaries")
+    if lang == "Sanskrit → Sanskrit":
+        return (2, "Indigenous Sanskrit thesauri (kośa)")
+    if lang.startswith("English →"):
+        return (3, "English–Sanskrit dictionaries")
+    return (4, "Other languages")
+
+
+HUB = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cologne Digital Sanskrit Lexicon — the open Sanskrit dictionaries</title>
+<meta name="description" content="The Cologne Digital Sanskrit Lexicon (CDSL): the open, canonical corpus of Sanskrit dictionaries — Monier-Williams, the Petersburg Wörterbücher, the koshas and more — digitised, corrected, and freely reusable.">
+<link rel="canonical" href="{org}/">
+<meta name="theme-color" content="#1f78b4">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cologne Digital Sanskrit Lexicon">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="Cologne Digital Sanskrit Lexicon">
+<meta property="og:description" content="The open, canonical corpus of Sanskrit dictionaries — digitised, corrected, and freely reusable.">
+<meta property="og:url" content="{org}/">
+<meta property="og:image" content="{card}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cologne Digital Sanskrit Lexicon">
+<meta name="twitter:description" content="The open, canonical corpus of Sanskrit dictionaries — digitised, corrected, and freely reusable.">
+<meta name="twitter:image" content="{card}">
+<style>
+  :root {{ --ink:#1b2a38; --muted:#5a6b7a; --accent:#1f78b4; --bg:#f7f9fb; --card:#fff; --line:#e2e8ee; }}
+  * {{ box-sizing:border-box; }}
+  body {{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }}
+  a {{ color:var(--accent); }}
+  .wrap {{ max-width:960px; margin:0 auto; padding:0 20px; }}
+  .hero {{ background:linear-gradient(160deg,#1e2f40,#2d4e6e); color:#f4f7fa; padding:60px 0 52px; }}
+  .hero h1 {{ font-family:Georgia,"Times New Roman",serif; font-size:2.3rem; line-height:1.15; margin:0 0 .5rem; }}
+  .hero p {{ color:#dbe6f0; margin:0; max-width:64ch; font-size:1.08rem; }}
+  .cta {{ display:flex; flex-wrap:wrap; gap:.7rem; margin:1.6rem 0 0; }}
+  .btn {{ display:inline-block; padding:.7rem 1.1rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:.95rem; }}
+  .btn.primary {{ background:#4aa3df; color:#0b1b28; }}
+  .btn.ghost {{ background:rgba(255,255,255,.10); color:#eaf2f8; border:1px solid rgba(255,255,255,.25); }}
+  main {{ padding:44px 0 20px; }}
+  h2 {{ font-size:1.3rem; margin:2.2rem 0 .3rem; }}
+  h2:first-child {{ margin-top:0; }}
+  .sub {{ color:var(--muted); margin:.1rem 0 1rem; }}
+  .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }}
+  .dcard {{ display:block; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; text-decoration:none; color:inherit; transition:border-color .15s,box-shadow .15s; }}
+  .dcard:hover {{ border-color:#9cc3e0; box-shadow:0 2px 10px rgba(31,120,180,.08); }}
+  .dabbr {{ display:inline-block; font-weight:700; font-size:.72rem; letter-spacing:.06em; color:#2d6a9a; background:#eaf3fa; padding:.15rem .5rem; border-radius:999px; }}
+  .dtitle {{ display:block; font-weight:600; margin:.5rem 0 .15rem; }}
+  .dmeta {{ display:block; color:var(--muted); font-size:.85rem; }}
+  footer {{ border-top:1px solid var(--line); background:var(--card); margin-top:36px; }}
+  footer .wrap {{ padding:22px 20px; color:var(--muted); font-size:.9rem; }}
+  footer a {{ color:var(--muted); }}
+  @media (max-width:520px) {{ .hero h1 {{ font-size:1.85rem; }} }}
+</style>
+</head>
+<body>
+<div class="hero"><div class="wrap">
+  <h1>Cologne Digital Sanskrit Lexicon</h1>
+  <p>The open, canonical corpus of Sanskrit dictionaries — Monier-Williams, the Petersburg
+  Wörterbücher, the classical <em>kośa</em>s and more — digitised, corrected, and published as
+  citable, reproducible open data.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://www.sanskrit-lexicon.uni-koeln.de/">Search the dictionaries →</a>
+    <a class="btn ghost" href="https://github.com/sanskrit-lexicon">GitHub organization</a>
+  </div>
+</div></div>
+<main><div class="wrap">
+{sections}
+  <h2>Analysis &amp; tools</h2>
+  <p class="sub">Apps and research surfaces built on the corpus.</p>
+  <div class="grid">
+{tools}
+  </div>
+</div></main>
+<footer><div class="wrap">
+  Cologne Digital Sanskrit Lexicon ·
+  <a href="https://www.sanskrit-lexicon.uni-koeln.de/">sanskrit-lexicon.uni-koeln.de</a> ·
+  <a href="https://github.com/sanskrit-lexicon">GitHub</a> ·
+  data under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div></footer>
+</body>
+</html>
+"""
+
+
+def build_hub():
+    # bucket dictionaries by direction, preserving DICTS insertion order within groups
+    groups = {}
+    for repo, d in DICTS.items():
+        order, label = _group_key(d["lang"])
+        groups.setdefault((order, label), []).append(repo)
+    sections = []
+    for (order, label) in sorted(groups):
+        cards = []
+        for repo in groups[(order, label)]:
+            d = DICTS[repo]
+            py = ", ".join(p for p in [d.get("place"), d.get("year")] if p)
+            meta = " · ".join(p for p in [d.get("author"), py] if p)
+            cards.append(
+                f'    <a class="dcard" href="{ORG}/{repo}/">'
+                f'<span class="dabbr">{esc_text(d["abbr"])}</span>'
+                f'<span class="dtitle">{esc_text(d["title"])}</span>'
+                f'<span class="dmeta">{esc_text(meta)}</span></a>')
+        sections.append(f'  <h2>{esc_text(label)}</h2>\n  <div class="grid">\n'
+                        + "\n".join(cards) + "\n  </div>")
+    tools = "\n".join(
+        f'    <a class="dcard" href="{ORG}/{slug}/">'
+        f'<span class="dtitle">{esc_text(name)}</span>'
+        f'<span class="dmeta">{esc_text(desc)}</span></a>'
+        for slug, name, desc in TOOLS)
+    return HUB.format(org=ORG, card=CARD, sections="\n".join(sections), tools=tools)
+
+
 if __name__ == "__main__":
-    repos = sys.argv[1:] or list(DICTS)
+    args = sys.argv[1:]
     base = Path(__file__).resolve().parent / "out"
-    for repo in repos:
-        out = base / repo
-        out.mkdir(parents=True, exist_ok=True)
-        (out / "index.html").write_text(build(repo), encoding="utf-8")
-        print(f"wrote {out / 'index.html'}")
+    if args and args[0] == "--hub":
+        base.mkdir(parents=True, exist_ok=True)
+        (base / "index.html").write_text(build_hub(), encoding="utf-8")
+        print(f"wrote {base / 'index.html'} (org-root hub)")
+    else:
+        for repo in (args or list(DICTS)):
+            out = base / repo
+            out.mkdir(parents=True, exist_ok=True)
+            (out / "index.html").write_text(build(repo), encoding="utf-8")
+            print(f"wrote {out / 'index.html'}")
