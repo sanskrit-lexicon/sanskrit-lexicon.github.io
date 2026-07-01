@@ -17,3 +17,7 @@ defaults:
       path: ""
     values:
       image: /cdsl-card.png
+
+# Repo tooling, not site content — keep it out of the published site.
+exclude:
+  - tools
