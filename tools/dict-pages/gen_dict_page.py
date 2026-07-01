@@ -329,7 +329,7 @@ HUB = """<!DOCTYPE html>
   h2 {{ font-size:1.3rem; margin:2.2rem 0 .3rem; }}
   h2:first-child {{ margin-top:0; }}
   .sub {{ color:var(--muted); margin:.1rem 0 1rem; }}
-  .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }}
+  .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); gap:12px; }}
   .dcard {{ display:block; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; text-decoration:none; color:inherit; transition:border-color .15s,box-shadow .15s; }}
   .dcard:hover {{ border-color:#9cc3e0; box-shadow:0 2px 10px rgba(31,120,180,.08); }}
   .dabbr {{ display:inline-block; font-weight:700; font-size:.72rem; letter-spacing:.06em; color:#2d6a9a; background:#eaf3fa; padding:.15rem .5rem; border-radius:999px; }}
