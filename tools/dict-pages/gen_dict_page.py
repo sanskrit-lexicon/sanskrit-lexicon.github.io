@@ -129,6 +129,61 @@ DICTS = {
         cologne=None,
         desc="Kossowicz's Sanskrit–Russian dictionary, an early lexicon of the Russian Indological "
              "tradition. (Digitisation and correction in progress.)"),
+    "VCP": dict(abbr="VCP", title="Vācaspatyam",
+        author="Tārānātha Tarkavācaspati", year="1873–1884", place="Calcutta", lang="Sanskrit → Sanskrit",
+        cologne=cologne("VCP", "2020"),
+        desc="Tārānātha Tarkavācaspati's Vācaspatyam — a vast Sanskrit-to-Sanskrit encyclopaedic "
+             "lexicon (kośa), defining terms with extensive scriptural and śāstric citation."),
+    "BHS": dict(abbr="BHS", title="Buddhist Hybrid Sanskrit Dictionary",
+        author="Franklin Edgerton", year="1953", place="New Haven", lang="Buddhist Hybrid Sanskrit → English",
+        cologne=cologne("BHS", "2020"),
+        desc="Edgerton's dictionary of Buddhist Hybrid Sanskrit (1953), the standard lexicon for the "
+             "non-classical Sanskrit of Buddhist texts."),
+    "BOP": dict(abbr="BOP", title="Glossarium Sanscritum",
+        author="Franz Bopp", year="1847", place="Berlin", lang="Sanskrit → Latin",
+        cologne=cologne("BOP", "2020"),
+        desc="Bopp's Glossarium Sanscritum (1847), a Sanskrit–Latin glossary from the founding era of "
+             "comparative Indo-European philology."),
+    "VEI": dict(abbr="VEI", title="The Vedic Index of Names and Subjects",
+        author="A. A. Macdonell & A. B. Keith", year="1912", place="London",
+        lang="Vedic reference → English", cologne=cologne("VEI", "2020"),
+        group="Reference works, glossaries & indexes",
+        desc="Macdonell and Keith's Vedic Index (1912), the standard reference for the names and "
+             "subjects of Vedic literature."),
+    "IEG": dict(abbr="IEG", title="Indian Epigraphical Glossary",
+        author="Dineschandra Sircar", year="1966", place="Delhi",
+        lang="Epigraphic Sanskrit / Prakrit → English", cologne=cologne("IEG", "2020"),
+        group="Reference works, glossaries & indexes",
+        desc="Sircar's glossary of the technical terms of Indian inscriptions — administrative, "
+             "revenue, and social vocabulary of the epigraphic record."),
+    "INM": dict(abbr="INM", title="Index to the Names in the Mahābhārata",
+        author="Sören Sörensen", year="1904–1925", place="London",
+        lang="Proper-name index", cologne=cologne("INM", "2020"),
+        group="Reference works, glossaries & indexes",
+        desc="Sörensen's exhaustive index of the proper names in the Mahābhārata, with references — a "
+             "standard concordance for epic studies."),
+    "MCI": dict(abbr="MCI", title="Mahābhārata Cultural Index",
+        author="", year="1993", place="", lang="Cultural index",
+        cologne=cologne("MCI", "2020"), group="Reference works, glossaries & indexes",
+        desc="A cultural index to the Mahābhārata, cataloguing its material, social, and religious "
+             "references."),
+    "ACC": dict(abbr="ACC", title="Aufrecht's Catalogus Catalogorum",
+        author="Theodor Aufrecht", year="1891–1903", place="Leipzig",
+        lang="Bibliographic catalogue", cologne=cologne("ACC", "2020"),
+        group="Reference works, glossaries & indexes",
+        desc="Aufrecht's Catalogus Catalogorum — an alphabetical register of Sanskrit works and their "
+             "authors compiled from manuscript catalogues; the foundational bibliography of Sanskrit "
+             "literature."),
+    "KRM": dict(abbr="KRM", title="Kṛdantarūpamālā",
+        author="", year="1965", place="", lang="Sanskrit grammatical paradigm",
+        cologne=cologne("KRM", "2020"), group="Reference works, glossaries & indexes",
+        desc="The Kṛdantarūpamālā, a traditional listing of kṛdanta (primary derivative) forms — a "
+             "grammatical reference for Sanskrit verbal derivatives."),
+    "FRI": dict(abbr="FRI", title="Friš Sanskrit Reader Vocabulary",
+        author="Oldřich Friš", year="1956", place="", lang="Sanskrit reader glossary",
+        cologne=cologne("FRI", "2025"), group="Reference works, glossaries & indexes",
+        desc="The vocabulary to Oldřich Friš's Sanskrit reader (chrestomathy) — a glossary keyed to the "
+             "reader's selections."),
 }
 
 TEMPLATE = """<!DOCTYPE html>
@@ -277,16 +332,32 @@ TOOLS = [
 ]
 
 
-def _group_key(lang):
-    if "→ English" in lang:
-        return (0, "Sanskrit–English dictionaries")
-    if "→ German" in lang:
-        return (1, "Sanskrit–German dictionaries")
-    if lang == "Sanskrit → Sanskrit":
-        return (2, "Indigenous Sanskrit thesauri (kośa)")
-    if lang.startswith("English →"):
-        return (3, "English–Sanskrit dictionaries")
-    return (4, "Other languages")
+GROUP_ORDER = {
+    "Sanskrit–English dictionaries": 0,
+    "Sanskrit–German dictionaries": 1,
+    "Indigenous Sanskrit thesauri (kośa)": 2,
+    "English–Sanskrit dictionaries": 3,
+    "Other languages": 4,
+    "Reference works, glossaries & indexes": 5,
+}
+
+
+def _group_key(d):
+    # explicit `group` override wins (reference works, glossaries, indexes)
+    label = d.get("group")
+    if not label:
+        lang = d["lang"]
+        if "→ English" in lang:
+            label = "Sanskrit–English dictionaries"
+        elif "→ German" in lang:
+            label = "Sanskrit–German dictionaries"
+        elif lang == "Sanskrit → Sanskrit":
+            label = "Indigenous Sanskrit thesauri (kośa)"
+        elif lang.startswith("English →"):
+            label = "English–Sanskrit dictionaries"
+        else:
+            label = "Other languages"
+    return (GROUP_ORDER[label], label)
 
 
 HUB = """<!DOCTYPE html>
@@ -375,7 +446,7 @@ def build_hub():
     # bucket dictionaries by direction, preserving DICTS insertion order within groups
     groups = {}
     for repo, d in DICTS.items():
-        order, label = _group_key(d["lang"])
+        order, label = _group_key(d)
         groups.setdefault((order, label), []).append(repo)
     sections = []
     for (order, label) in sorted(groups):
