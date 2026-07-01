@@ -399,10 +399,45 @@ def build_hub():
     return HUB.format(org=ORG, card=CARD, sections="\n".join(sections), tools=tools)
 
 
+# --- Sitemaps ---
+# Child sitemaps of the tool sites (each has its own), referenced from the index.
+CHILD_SITEMAPS = ["csl-guides", "csl-observatory", "csl-atlas"]
+
+
+def build_dictionaries_sitemap():
+    """urlset for the org-root hub + every dictionary landing page."""
+    from datetime import date
+    today = date.today().isoformat()
+    urls = [(f"{ORG}/", "1.0")] + [(f"{ORG}/{repo}/", "0.8") for repo in DICTS]
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc, pr in urls:
+        lines += ["  <url>", f"    <loc>{loc}</loc>",
+                  f"    <lastmod>{today}</lastmod>", f"    <priority>{pr}</priority>", "  </url>"]
+    lines.append("</urlset>")
+    return "\n".join(lines) + "\n"
+
+
+def build_sitemap_index():
+    """sitemap index referencing the dictionaries sitemap + each tool-site sitemap."""
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    locs = [f"{ORG}/dictionaries.xml"] + [f"{ORG}/{s}/sitemap.xml" for s in CHILD_SITEMAPS]
+    for loc in locs:
+        lines += ["  <sitemap>", f"    <loc>{loc}</loc>", "  </sitemap>"]
+    lines.append("</sitemapindex>")
+    return "\n".join(lines) + "\n"
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     base = Path(__file__).resolve().parent / "out"
-    if args and args[0] == "--hub":
+    if args and args[0] == "--sitemap":
+        base.mkdir(parents=True, exist_ok=True)
+        (base / "dictionaries.xml").write_text(build_dictionaries_sitemap(), encoding="utf-8")
+        (base / "sitemap.xml").write_text(build_sitemap_index(), encoding="utf-8")
+        print(f"wrote {base / 'dictionaries.xml'} + {base / 'sitemap.xml'}")
+    elif args and args[0] == "--hub":
         base.mkdir(parents=True, exist_ok=True)
         (base / "index.html").write_text(build_hub(), encoding="utf-8")
         print(f"wrote {base / 'index.html'} (org-root hub)")
