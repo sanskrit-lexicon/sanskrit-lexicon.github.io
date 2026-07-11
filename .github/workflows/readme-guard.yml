@@ -29,10 +29,10 @@ jobs:
             exit 0
           fi
           git fetch --no-tags --depth=1 origin "$base_ref"
-          base_begin=$(git show "origin/$base_ref:README.md" 2>/dev/null | grep -cF '<!-- BEGIN MANUAL:')
-          head_begin=$(grep -cF '<!-- BEGIN MANUAL:' README.md 2>/dev/null || echo 0)
-          base_end=$(git show "origin/$base_ref:README.md" 2>/dev/null | grep -cF '<!-- END MANUAL:')
-          head_end=$(grep -cF '<!-- END MANUAL:' README.md 2>/dev/null || echo 0)
+          base_begin=$(git show "origin/$base_ref:README.md" 2>/dev/null | grep -cF '<!-- BEGIN MANUAL:' || true)
+          head_begin=$(grep -cF '<!-- BEGIN MANUAL:' README.md 2>/dev/null || true)
+          base_end=$(git show "origin/$base_ref:README.md" 2>/dev/null | grep -cF '<!-- END MANUAL:' || true)
+          head_end=$(grep -cF '<!-- END MANUAL:' README.md 2>/dev/null || true)
           echo "base: BEGIN=$base_begin END=$base_end | head: BEGIN=$head_begin END=$head_end"
           fail=0
           if [ "$head_begin" -lt "$base_begin" ]; then
