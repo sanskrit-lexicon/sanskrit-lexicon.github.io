@@ -1,3 +1,5 @@
+_Created: 01-07-2026 · Last updated: 05-09-2026_
+
 # CDSL dictionary landing-page generator
 
 <p align="right"><sub>Created: 2026-07-01 · Last updated: 2026-07-01</sub></p>
@@ -48,3 +50,5 @@ the static `index.html` directly. `add_nojekyll.py` does this for the whole set.
 CAE, CCS, MD, BEN, BOR, LRV, AMAR, AP, SHS, KOW. The per-dictionary
 author/year/title are compiled from standard scholarship — maintainers should
 sanity-check the less-common entries.
+
+_Dr. Mārcis Gasūns_

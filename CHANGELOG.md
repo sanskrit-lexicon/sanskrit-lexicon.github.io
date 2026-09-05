@@ -1,3 +1,5 @@
+_Created: 05-07-2026 · Last updated: 05-09-2026_
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -26,3 +28,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Hub grid hardened against ultra-narrow (<300px) viewport overflow (folded phones) via
   `minmax(min(100%,260px),1fr)`.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -27,3 +29,5 @@ Content is served directly from the `master`/`main` branch at `https://sanskrit-
 ## Notes
 
 This repo does not contain scripts — it is a static content host. Research scripts live in their respective dictionary or tool repos; outputs are committed here for publication.
+
+_Dr. Mārcis Gasūns_

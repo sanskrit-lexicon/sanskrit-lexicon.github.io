@@ -1,3 +1,5 @@
+_Created: 03-03-2020 · Last updated: 05-09-2026_
+
 ## verbs/vcp_skd
 
 March 2020
@@ -19,3 +21,5 @@ There are currently about 170 such verbs in vcp, and 100 such verbs in skd.
 HTML links to these reports are:
 * [vcp-skd-verb2-nomatch](https://sanskrit-lexicon.github.io/verbs/vcp_skd/verb2_nomatch.html) SLP1 spelling. 
 * [vcp-skd-verb2-nomatch-deva](https://sanskrit-lexicon.github.io/verbs/vcp_skd/verb2_nomatch_deva.html) Devanagari spelling.
+
+_Dr. Mārcis Gasūns_
