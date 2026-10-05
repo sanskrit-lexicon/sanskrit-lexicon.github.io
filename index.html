@@ -44,6 +44,13 @@
   .dabbr { display:inline-block; font-weight:700; font-size:.72rem; letter-spacing:.06em; color:#2d6a9a; background:#eaf3fa; padding:.15rem .5rem; border-radius:999px; }
   .dtitle { display:block; font-weight:600; margin:.5rem 0 .15rem; }
   .dmeta { display:block; color:var(--muted); font-size:.85rem; }
+  .cite { display:block; margin-top:1.1rem; color:#dbe6f0; font-size:1.02rem; }
+  .cite a { color:#8ecdf5; }
+  .ddoi { display:block; color:var(--muted); font-size:.75rem; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; margin-top:.3rem; }
+  .dotable { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); font-size:.9rem; }
+  .dotable th, .dotable td { text-align:left; padding:.45rem .7rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  .dotable th { background:#eaf3fa; color:#2d6a9a; font-size:.8rem; letter-spacing:.04em; }
+  .dotable .doi { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.82rem; white-space:nowrap; }
   footer { border-top:1px solid var(--line); background:var(--card); margin-top:36px; }
   footer .wrap { padding:22px 20px; color:var(--muted); font-size:.9rem; }
   footer a { color:var(--muted); }
@@ -56,6 +63,7 @@
   <p>The open, canonical corpus of Sanskrit dictionaries — Monier-Williams, the Petersburg
   Wörterbücher, the classical <em>kośa</em>s and more — digitised, corrected, and published as
   citable, reproducible open data.</p>
+    <span class="cite">Cite the corpus: <a href="https://doi.org/10.5281/zenodo.21319331">DOI 10.5281/zenodo.21319331</a></span>
   <div class="cta">
     <a class="btn primary" href="https://www.sanskrit-lexicon.uni-koeln.de/">Search the dictionaries →</a>
     <a class="btn ghost" href="https://github.com/sanskrit-lexicon">GitHub organization</a>
@@ -64,53 +72,97 @@
 <main><div class="wrap">
   <h2>Sanskrit–English dictionaries</h2>
   <div class="grid">
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/MWS/"><span class="dabbr">MW</span><span class="dtitle">Monier-Williams Sanskrit–English Dictionary</span><span class="dmeta">Sir Monier Monier-Williams · Oxford, 1899</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/MW72/"><span class="dabbr">MW72</span><span class="dtitle">Monier-Williams Sanskrit–English Dictionary (1872)</span><span class="dmeta">Sir Monier Monier-Williams · Oxford, 1872</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/AP/"><span class="dabbr">AP</span><span class="dtitle">The Practical Sanskrit–English Dictionary (Revised &amp; Enlarged)</span><span class="dmeta">Vaman Shivram Apte · Poona, 1957</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/AP90/"><span class="dabbr">AP90</span><span class="dtitle">The Practical Sanskrit–English Dictionary (1890)</span><span class="dmeta">Vaman Shivram Apte · Poona, 1890</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/WIL/"><span class="dabbr">WIL</span><span class="dtitle">A Dictionary in Sanscrit and English</span><span class="dmeta">Horace Hayman Wilson · Calcutta, 1832</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/BEN/"><span class="dabbr">BEN</span><span class="dtitle">A Sanskrit–English Dictionary</span><span class="dmeta">Theodor Benfey · London, 1866</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/MD/"><span class="dabbr">MD</span><span class="dtitle">A Practical Sanskrit Dictionary</span><span class="dmeta">Arthur Anthony Macdonell · Oxford, 1893</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/CAE/"><span class="dabbr">CAE</span><span class="dtitle">A Sanskrit–English Dictionary</span><span class="dmeta">Carl Cappeller · Strassburg, 1891</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/SHS/"><span class="dabbr">SHS</span><span class="dtitle">The Śabda-Sāgara: A Comprehensive Sanskrit–English Lexicon</span><span class="dmeta">Calcutta, 1900</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/LRV/"><span class="dabbr">LRV</span><span class="dtitle">The Standard Sanskrit–English Dictionary</span><span class="dmeta">L. R. Vaidya · Bombay, 1889</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/BHS/"><span class="dabbr">BHS</span><span class="dtitle">Buddhist Hybrid Sanskrit Dictionary</span><span class="dmeta">Franklin Edgerton · New Haven, 1953</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/MWS/"><span class="dabbr">MW</span><span class="dtitle">Monier-Williams Sanskrit–English Dictionary</span><span class="dmeta">Sir Monier Monier-Williams · Oxford, 1899</span><span class="ddoi">DOI 10.5281/zenodo.21429504</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/MW72/"><span class="dabbr">MW72</span><span class="dtitle">Monier-Williams Sanskrit–English Dictionary (1872)</span><span class="dmeta">Sir Monier Monier-Williams · Oxford, 1872</span><span class="ddoi">DOI 10.5281/zenodo.23151367</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/AP/"><span class="dabbr">AP</span><span class="dtitle">The Practical Sanskrit–English Dictionary (Revised &amp; Enlarged)</span><span class="dmeta">Vaman Shivram Apte · Poona, 1957</span><span class="ddoi">DOI 10.5281/zenodo.23151276</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/AP90/"><span class="dabbr">AP90</span><span class="dtitle">The Practical Sanskrit–English Dictionary (1890)</span><span class="dmeta">Vaman Shivram Apte · Poona, 1890</span><span class="ddoi">DOI 10.5281/zenodo.23151282</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/WIL/"><span class="dabbr">WIL</span><span class="dtitle">A Dictionary in Sanscrit and English</span><span class="dmeta">Horace Hayman Wilson · Calcutta, 1832</span><span class="ddoi">DOI 10.5281/zenodo.22170459</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/BEN/"><span class="dabbr">BEN</span><span class="dtitle">A Sanskrit–English Dictionary</span><span class="dmeta">Theodor Benfey · London, 1866</span><span class="ddoi">DOI 10.5281/zenodo.23151226</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/MD/"><span class="dabbr">MD</span><span class="dtitle">A Practical Sanskrit Dictionary</span><span class="dmeta">Arthur Anthony Macdonell · Oxford, 1893</span><span class="ddoi">DOI 10.5281/zenodo.23151363</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/CAE/"><span class="dabbr">CAE</span><span class="dtitle">A Sanskrit–English Dictionary</span><span class="dmeta">Carl Cappeller · Strassburg, 1891</span><span class="ddoi">DOI 10.5281/zenodo.23151313</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/SHS/"><span class="dabbr">SHS</span><span class="dtitle">The Śabda-Sāgara: A Comprehensive Sanskrit–English Lexicon</span><span class="dmeta">Calcutta, 1900</span><span class="ddoi">DOI 10.5281/zenodo.23151381</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/LRV/"><span class="dabbr">LRV</span><span class="dtitle">The Standard Sanskrit–English Dictionary</span><span class="dmeta">L. R. Vaidya · Bombay, 1889</span><span class="ddoi">DOI 10.5281/zenodo.23151350</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/BHS/"><span class="dabbr">BHS</span><span class="dtitle">Buddhist Hybrid Sanskrit Dictionary</span><span class="dmeta">Franklin Edgerton · New Haven, 1953</span><span class="ddoi">DOI 10.5281/zenodo.23151294</span></a>
   </div>
   <h2>Sanskrit–German dictionaries</h2>
   <div class="grid">
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/PWG/"><span class="dabbr">PW</span><span class="dtitle">Sanskrit-Wörterbuch (Großes Petersburger Wörterbuch)</span><span class="dmeta">Otto Böhtlingk &amp; Rudolph Roth · St. Petersburg, 1855–1875</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/PWK/"><span class="dabbr">pw</span><span class="dtitle">Sanskrit-Wörterbuch in kürzerer Fassung</span><span class="dmeta">Otto Böhtlingk · St. Petersburg, 1879–1889</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/SCH/"><span class="dabbr">SCH</span><span class="dtitle">Nachträge zum Sanskrit-Wörterbuch in kürzerer Fassung</span><span class="dmeta">Richard Schmidt · Leipzig, 1928</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/CCS/"><span class="dabbr">CCS</span><span class="dtitle">Sanskrit-Wörterbuch</span><span class="dmeta">Carl Cappeller · Strassburg, 1887</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/GRA/"><span class="dabbr">GRA</span><span class="dtitle">Wörterbuch zum Rig-Veda</span><span class="dmeta">Hermann Grassmann · Leipzig, 1873</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/PWG/"><span class="dabbr">PW</span><span class="dtitle">Sanskrit-Wörterbuch (Großes Petersburger Wörterbuch)</span><span class="dmeta">Otto Böhtlingk &amp; Rudolph Roth · St. Petersburg, 1855–1875</span><span class="ddoi">DOI 10.5281/zenodo.22170439</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/PWK/"><span class="dabbr">pw</span><span class="dtitle">Sanskrit-Wörterbuch in kürzerer Fassung</span><span class="dmeta">Otto Böhtlingk · St. Petersburg, 1879–1889</span><span class="ddoi">DOI 10.5281/zenodo.22170448</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/SCH/"><span class="dabbr">SCH</span><span class="dtitle">Nachträge zum Sanskrit-Wörterbuch in kürzerer Fassung</span><span class="dmeta">Richard Schmidt · Leipzig, 1928</span><span class="ddoi">DOI 10.5281/zenodo.23151377</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/CCS/"><span class="dabbr">CCS</span><span class="dtitle">Sanskrit-Wörterbuch</span><span class="dmeta">Carl Cappeller · Strassburg, 1887</span><span class="ddoi">DOI 10.5281/zenodo.23151317</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/GRA/"><span class="dabbr">GRA</span><span class="dtitle">Wörterbuch zum Rig-Veda</span><span class="dmeta">Hermann Grassmann · Leipzig, 1873</span><span class="ddoi">DOI 10.5281/zenodo.23151327</span></a>
   </div>
   <h2>Indigenous Sanskrit thesauri (kośa)</h2>
   <div class="grid">
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/SKD/"><span class="dabbr">SKD</span><span class="dtitle">Śabdakalpadruma</span><span class="dmeta">Rājā Rādhākānta Deva · Calcutta, 1822–1858</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/AMAR/"><span class="dabbr">AMAR</span><span class="dtitle">Amarakośa (Nāmaliṅgānuśāsana)</span><span class="dmeta">Amarasiṃha · c. 4th–6th c. CE</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/VCP/"><span class="dabbr">VCP</span><span class="dtitle">Vācaspatyam</span><span class="dmeta">Tārānātha Tarkavācaspati · Calcutta, 1873–1884</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/SKD/"><span class="dabbr">SKD</span><span class="dtitle">Śabdakalpadruma</span><span class="dmeta">Rājā Rādhākānta Deva · Calcutta, 1822–1858</span><span class="ddoi">DOI 10.5281/zenodo.23151389</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/AMAR/"><span class="dabbr">AMAR</span><span class="dtitle">Amarakośa (Nāmaliṅgānuśāsana)</span><span class="dmeta">Amarasiṃha · c. 4th–6th c. CE</span><span class="ddoi">DOI 10.5281/zenodo.23151274</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/VCP/"><span class="dabbr">VCP</span><span class="dtitle">Vācaspatyam</span><span class="dmeta">Tārānātha Tarkavācaspati · Calcutta, 1873–1884</span><span class="ddoi">DOI 10.5281/zenodo.23151393</span></a>
   </div>
   <h2>English–Sanskrit dictionaries</h2>
   <div class="grid">
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/ApteES/"><span class="dabbr">AE</span><span class="dtitle">The Student's English–Sanskrit Dictionary</span><span class="dmeta">Vaman Shivram Apte · Poona, 1884</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/BOR/"><span class="dabbr">BOR</span><span class="dtitle">A Practical English–Sanskrit Dictionary</span><span class="dmeta">Anundoram Borooah · Calcutta, 1877–1887</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/ApteES/"><span class="dabbr">AE</span><span class="dtitle">The Student's English–Sanskrit Dictionary</span><span class="dmeta">Vaman Shivram Apte · Poona, 1884</span><span class="ddoi">DOI 10.5281/zenodo.23151284</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/BOR/"><span class="dabbr">BOR</span><span class="dtitle">A Practical English–Sanskrit Dictionary</span><span class="dmeta">Anundoram Borooah · Calcutta, 1877–1887</span><span class="ddoi">DOI 10.5281/zenodo.23151307</span></a>
   </div>
   <h2>Other languages</h2>
   <div class="grid">
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/BUR/"><span class="dabbr">BUR</span><span class="dtitle">Dictionnaire classique sanscrit-français</span><span class="dmeta">Émile Burnouf &amp; Leupol · Paris, 1866</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/KOW/"><span class="dabbr">KOW</span><span class="dtitle">Sanskrit–Russian Dictionary</span><span class="dmeta">Kaetan Kossowicz · St. Petersburg, 1854–1856</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/BOP/"><span class="dabbr">BOP</span><span class="dtitle">Glossarium Sanscritum</span><span class="dmeta">Franz Bopp · Berlin, 1847</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/BUR/"><span class="dabbr">BUR</span><span class="dtitle">Dictionnaire classique sanscrit-français</span><span class="dmeta">Émile Burnouf &amp; Leupol · Paris, 1866</span><span class="ddoi">DOI 10.5281/zenodo.23151309</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/KOW/"><span class="dabbr">KOW</span><span class="dtitle">Sanskrit–Russian Dictionary</span><span class="dmeta">Kaetan Kossowicz · St. Petersburg, 1854–1856</span><span class="ddoi">DOI 10.5281/zenodo.23151346</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/BOP/"><span class="dabbr">BOP</span><span class="dtitle">Glossarium Sanscritum</span><span class="dmeta">Franz Bopp · Berlin, 1847</span><span class="ddoi">DOI 10.5281/zenodo.23151301</span></a>
   </div>
   <h2>Reference works, glossaries &amp; indexes</h2>
   <div class="grid">
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/VEI/"><span class="dabbr">VEI</span><span class="dtitle">The Vedic Index of Names and Subjects</span><span class="dmeta">A. A. Macdonell &amp; A. B. Keith · London, 1912</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/IEG/"><span class="dabbr">IEG</span><span class="dtitle">Indian Epigraphical Glossary</span><span class="dmeta">Dineschandra Sircar · Delhi, 1966</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/INM/"><span class="dabbr">INM</span><span class="dtitle">Index to the Names in the Mahābhārata</span><span class="dmeta">Sören Sörensen · London, 1904–1925</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/MCI/"><span class="dabbr">MCI</span><span class="dtitle">Mahābhārata Cultural Index</span><span class="dmeta">1993</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/ACC/"><span class="dabbr">ACC</span><span class="dtitle">Aufrecht's Catalogus Catalogorum</span><span class="dmeta">Theodor Aufrecht · Leipzig, 1891–1903</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/KRM/"><span class="dabbr">KRM</span><span class="dtitle">Kṛdantarūpamālā</span><span class="dmeta">1965</span></a>
-    <a class="dcard" href="https://sanskrit-lexicon.github.io/FRI/"><span class="dabbr">FRI</span><span class="dtitle">Friš Sanskrit Reader Vocabulary</span><span class="dmeta">Oldřich Friš · 1956</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/VEI/"><span class="dabbr">VEI</span><span class="dtitle">The Vedic Index of Names and Subjects</span><span class="dmeta">A. A. Macdonell &amp; A. B. Keith · London, 1912</span><span class="ddoi">DOI 10.5281/zenodo.23151395</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/IEG/"><span class="dabbr">IEG</span><span class="dtitle">Indian Epigraphical Glossary</span><span class="dmeta">Dineschandra Sircar · Delhi, 1966</span><span class="ddoi">DOI 10.5281/zenodo.23151338</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/INM/"><span class="dabbr">INM</span><span class="dtitle">Index to the Names in the Mahābhārata</span><span class="dmeta">Sören Sörensen · London, 1904–1925</span><span class="ddoi">DOI 10.5281/zenodo.23151343</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/MCI/"><span class="dabbr">MCI</span><span class="dtitle">Mahābhārata Cultural Index</span><span class="dmeta">1993</span><span class="ddoi">DOI 10.5281/zenodo.23151357</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/ACC/"><span class="dabbr">ACC</span><span class="dtitle">Aufrecht's Catalogus Catalogorum</span><span class="dmeta">Theodor Aufrecht · Leipzig, 1891–1903</span><span class="ddoi">DOI 10.5281/zenodo.23151272</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/KRM/"><span class="dabbr">KRM</span><span class="dtitle">Kṛdantarūpamālā</span><span class="dmeta">1965</span><span class="ddoi">DOI 10.5281/zenodo.23151348</span></a>
+    <a class="dcard" href="https://sanskrit-lexicon.github.io/FRI/"><span class="dabbr">FRI</span><span class="dtitle">Friš Sanskrit Reader Vocabulary</span><span class="dmeta">Oldřich Friš · 1956</span><span class="ddoi">DOI 10.5281/zenodo.23151323</span></a>
   </div>
+  <h2 id="cite">Cite &amp; DOI</h2>
+  <p class="sub">Every dictionary carries a Zenodo concept DOI that always resolves to its latest version; the whole corpus is citable under the umbrella DOI <a href="https://doi.org/10.5281/zenodo.21319331">10.5281/zenodo.21319331</a>.</p>
+  <table class="dotable">
+    <thead><tr><th>Code</th><th>Dictionary</th><th>DOI</th></tr></thead>
+    <tbody>
+      <tr><td>CDSL</td><td>Cologne Digital Sanskrit Dictionaries (corpus umbrella, csl-sqlite)</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.21319331">10.5281/zenodo.21319331</a></td></tr>
+      <tr><td>ACC</td><td>Aufrecht's Catalogus Catalogorum — Theodor Aufrecht · Leipzig, 1891–1903</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151272">10.5281/zenodo.23151272</a></td></tr>
+      <tr><td>AMAR</td><td>Amarakośa (Nāmaliṅgānuśāsana) — Amarasiṃha · c. 4th–6th c. CE (digital edition 2026)</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151274">10.5281/zenodo.23151274</a></td></tr>
+      <tr><td>AP</td><td>The Practical Sanskrit–English Dictionary (Revised & Enlarged) — Vaman Shivram Apte · Poona, 1957</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151276">10.5281/zenodo.23151276</a></td></tr>
+      <tr><td>AP90</td><td>The Practical Sanskrit–English Dictionary (1890) — Vaman Shivram Apte · Poona, 1890</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151282">10.5281/zenodo.23151282</a></td></tr>
+      <tr><td>ApteES</td><td>The Student's English–Sanskrit Dictionary — Vaman Shivram Apte · Poona, 1884</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151284">10.5281/zenodo.23151284</a></td></tr>
+      <tr><td>ArabicInSanskrit</td><td>Arabic (and Perso-Arabic) words occurring in the Sanskrit dictionaries — Cologne Digital Sanskrit Lexicon research workspace · 2026</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151288">10.5281/zenodo.23151288</a></td></tr>
+      <tr><td>BEN</td><td>A Sanskrit–English Dictionary — Theodor Benfey · London, 1866</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151226">10.5281/zenodo.23151226</a></td></tr>
+      <tr><td>BHS</td><td>Buddhist Hybrid Sanskrit Dictionary — Franklin Edgerton · New Haven, 1953</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151294">10.5281/zenodo.23151294</a></td></tr>
+      <tr><td>BOP</td><td>Glossarium Sanscritum — Franz Bopp · Berlin, 1847</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151301">10.5281/zenodo.23151301</a></td></tr>
+      <tr><td>BOR</td><td>A Practical English–Sanskrit Dictionary — Anundoram Borooah · Calcutta, 1877–1887</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151307">10.5281/zenodo.23151307</a></td></tr>
+      <tr><td>BUR</td><td>Dictionnaire classique sanscrit-français — Émile Burnouf & Leupol · Paris, 1866</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151309">10.5281/zenodo.23151309</a></td></tr>
+      <tr><td>CAE</td><td>A Sanskrit–English Dictionary — Carl Cappeller · Strassburg, 1891</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151313">10.5281/zenodo.23151313</a></td></tr>
+      <tr><td>CCS</td><td>Sanskrit-Wörterbuch — Carl Cappeller · Strassburg, 1887</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151317">10.5281/zenodo.23151317</a></td></tr>
+      <tr><td>FRI</td><td>Friš Sanskrit Reader Vocabulary — Oldřich Friš · 1956</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151323">10.5281/zenodo.23151323</a></td></tr>
+      <tr><td>GRA</td><td>Wörterbuch zum Rig-Veda — Hermann Grassmann · Leipzig, 1873</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151327">10.5281/zenodo.23151327</a></td></tr>
+      <tr><td>GreekInSanskrit</td><td>Greek words in the Cologne Sanskrit dictionary digitizations — Cologne Digital Sanskrit Lexicon research workspace · 2026</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151336">10.5281/zenodo.23151336</a></td></tr>
+      <tr><td>IEG</td><td>Indian Epigraphical Glossary — Dineschandra Sircar · Delhi, 1966</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151338">10.5281/zenodo.23151338</a></td></tr>
+      <tr><td>INM</td><td>Index to the Names in the Mahābhārata — Sören Sörensen · London, 1904–1925</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151343">10.5281/zenodo.23151343</a></td></tr>
+      <tr><td>KOW</td><td>Sanskrit–Russian Dictionary — Kaetan Kossowicz · St. Petersburg, 1854–1856</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151346">10.5281/zenodo.23151346</a></td></tr>
+      <tr><td>KRM</td><td>Kṛdantarūpamālā · 1965</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151348">10.5281/zenodo.23151348</a></td></tr>
+      <tr><td>LRV</td><td>The Standard Sanskrit–English Dictionary — L. R. Vaidya · Bombay, 1889</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151350">10.5281/zenodo.23151350</a></td></tr>
+      <tr><td>MCI</td><td>Mahābhārata Cultural Index · 1993</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151357">10.5281/zenodo.23151357</a></td></tr>
+      <tr><td>MD</td><td>A Practical Sanskrit Dictionary — Arthur Anthony Macdonell · Oxford, 1893</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151363">10.5281/zenodo.23151363</a></td></tr>
+      <tr><td>MW72</td><td>Monier-Williams Sanskrit–English Dictionary (1872) — Sir Monier Monier-Williams · Oxford, 1872</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151367">10.5281/zenodo.23151367</a></td></tr>
+      <tr><td>MWS</td><td>Monier-Williams Sanskrit-English Dictionary — Cologne Digital Edition</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.21429504">10.5281/zenodo.21429504</a></td></tr>
+      <tr><td>PD</td><td>An Encyclopaedic Dictionary of Sanskrit on Historical Principles — Deccan College, Pune (KoshaSHRI) · 2026</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151371">10.5281/zenodo.23151371</a></td></tr>
+      <tr><td>PUI</td><td>Purana Index · 1951</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151375">10.5281/zenodo.23151375</a></td></tr>
+      <tr><td>PWG</td><td>Böhtlingk and Roth Grosses Petersburger Wörterbuch</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.22170439">10.5281/zenodo.22170439</a></td></tr>
+      <tr><td>PWK</td><td>Böhtlingk Sanskrit-Wörterbuch in kürzerer Fassung</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.22170448">10.5281/zenodo.22170448</a></td></tr>
+      <tr><td>SCH</td><td>Nachträge zum Sanskrit-Wörterbuch in kürzerer Fassung — Richard Schmidt · Leipzig, 1928</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151377">10.5281/zenodo.23151377</a></td></tr>
+      <tr><td>SHS</td><td>The Śabda-Sāgara: A Comprehensive Sanskrit–English Lexicon — Calcutta, 1900</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151381">10.5281/zenodo.23151381</a></td></tr>
+      <tr><td>SKD</td><td>Śabdakalpadruma — Rājā Rādhākānta Deva · Calcutta, 1822–1858</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151389">10.5281/zenodo.23151389</a></td></tr>
+      <tr><td>STC</td><td>Dictionnaire Sanscrit-Français — N. Stchoupak, L. Nitti & L. Renou · Paris, 1932</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151391">10.5281/zenodo.23151391</a></td></tr>
+      <tr><td>VCP</td><td>Vācaspatyam — Tārānātha Tarkavācaspati · Calcutta, 1873–1884</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151393">10.5281/zenodo.23151393</a></td></tr>
+      <tr><td>VEI</td><td>The Vedic Index of Names and Subjects — A. A. Macdonell & A. B. Keith · London, 1912</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.23151395">10.5281/zenodo.23151395</a></td></tr>
+      <tr><td>WIL</td><td>Wilson Sanskrit-English Dictionary</td><td class="doi"><a href="https://doi.org/10.5281/zenodo.22170459">10.5281/zenodo.22170459</a></td></tr>
+    </tbody>
+  </table>
   <h2>Analysis &amp; tools</h2>
   <p class="sub">Apps and research surfaces built on the corpus.</p>
   <div class="grid">
