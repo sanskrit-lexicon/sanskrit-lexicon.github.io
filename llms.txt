@@ -46,6 +46,12 @@
 - [KRM — Kṛdantarūpamālā (1965)](https://sanskrit-lexicon.github.io/KRM/): https://doi.org/10.5281/zenodo.23151348
 - [FRI — Friš Sanskrit Reader Vocabulary (Oldřich Friš · 1956)](https://sanskrit-lexicon.github.io/FRI/): https://doi.org/10.5281/zenodo.23151323
 
+## Related dictionaries (Zenodo data deposits — no hosted page yet)
+
+- [K — An Encyclopaedic Dictionary of Sanskrit on Historical Principles (Deccan College, Pune · K)](https://doi.org/10.5281/zenodo.23151371): Zenodo data deposit, not yet hosted as a search page
+- [STC — Dictionnaire Sanscrit-Français (N. Stchoupak, L. Nitti & L. Renou · Paris, 1932)](https://doi.org/10.5281/zenodo.23151391): Zenodo data deposit, not yet hosted as a search page
+- [kosha — Gasuns Sanskrit Dictionary (Sanskrit data-hub)](https://doi.org/10.5281/zenodo.21965599): Zenodo data deposit, data-hub repository
+
 ## Corpus citation
 
 - [All dictionaries, one citable release series (csl-sqlite)](https://doi.org/10.5281/zenodo.21319331): umbrella concept DOI for the whole corpus
