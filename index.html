@@ -56,6 +56,34 @@
   footer a { color:var(--muted); }
   @media (max-width:520px) { .hero h1 { font-size:1.85rem; } }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sanskrit-lexicon.github.io/#organization",
+      "name": "Cologne Digital Sanskrit Lexicon",
+      "alternateName": ["CDSL", "sanskrit-lexicon"],
+      "url": "https://sanskrit-lexicon.github.io/",
+      "logo": "https://sanskrit-lexicon.github.io/cdsl-card.png",
+      "sameAs": [
+        "https://github.com/sanskrit-lexicon",
+        "https://www.sanskrit-lexicon.uni-koeln.de/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sanskrit-lexicon.github.io/#website",
+      "url": "https://sanskrit-lexicon.github.io/",
+      "name": "Cologne Digital Sanskrit Lexicon",
+      "description": "The open, canonical corpus of Sanskrit dictionaries — digitised, corrected, and freely reusable.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://sanskrit-lexicon.github.io/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="hero"><div class="wrap">

@@ -1,0 +1,51 @@
+# Cologne Digital Sanskrit Lexicon (CDSL)
+
+> The open, canonical corpus of Sanskrit dictionaries — Monier-Williams, the Petersburg
+> Wörterbücher, the classical kośas and more — digitised, corrected, and published as
+> citable, reproducible open data. Cite the whole corpus: https://doi.org/10.5281/zenodo.21319331.
+
+## Sites
+
+- [Search the dictionaries](https://www.sanskrit-lexicon.uni-koeln.de/): the full-text search over all 30+ dictionaries
+- [csl-guides](https://sanskrit-lexicon.github.io/csl-guides/): practical guides to the CDSL data, exports and APIs
+- [csl-atlas](https://sanskrit-lexicon.github.io/csl-atlas/): evidence-graded atlas of the Cologne Digital Sanskrit Lexicon
+- [csl-observatory](https://sanskrit-lexicon.github.io/csl-observatory/): thirteen years of the CDSL measured as a maintenance ecosystem
+- [GitHub organization](https://github.com/sanskrit-lexicon): source, data and issue trackers
+
+## Dictionaries (Zenodo concept DOIs — each resolves to the latest version)
+
+- [MW — Monier-Williams Sanskrit–English Dictionary (Sir Monier Monier-Williams · Oxford, 1899)](https://sanskrit-lexicon.github.io/MWS/): https://doi.org/10.5281/zenodo.21429504
+- [MW72 — Monier-Williams Sanskrit–English Dictionary (1872) (Sir Monier Monier-Williams · Oxford, 1872)](https://sanskrit-lexicon.github.io/MW72/): https://doi.org/10.5281/zenodo.23151367
+- [AP — The Practical Sanskrit–English Dictionary (Revised & Enlarged) (Vaman Shivram Apte · Poona, 1957)](https://sanskrit-lexicon.github.io/AP/): https://doi.org/10.5281/zenodo.23151276
+- [AP90 — The Practical Sanskrit–English Dictionary (1890) (Vaman Shivram Apte · Poona, 1890)](https://sanskrit-lexicon.github.io/AP90/): https://doi.org/10.5281/zenodo.23151282
+- [WIL — A Dictionary in Sanscrit and English (Horace Hayman Wilson · Calcutta, 1832)](https://sanskrit-lexicon.github.io/WIL/): https://doi.org/10.5281/zenodo.22170459
+- [BEN — A Sanskrit–English Dictionary (Theodor Benfey · London, 1866)](https://sanskrit-lexicon.github.io/BEN/): https://doi.org/10.5281/zenodo.23151226
+- [MD — A Practical Sanskrit Dictionary (Arthur Anthony Macdonell · Oxford, 1893)](https://sanskrit-lexicon.github.io/MD/): https://doi.org/10.5281/zenodo.23151363
+- [CAE — A Sanskrit–English Dictionary (Carl Cappeller · Strassburg, 1891)](https://sanskrit-lexicon.github.io/CAE/): https://doi.org/10.5281/zenodo.23151313
+- [SHS — The Śabda-Sāgara: A Comprehensive Sanskrit–English Lexicon (Calcutta, 1900)](https://sanskrit-lexicon.github.io/SHS/): https://doi.org/10.5281/zenodo.23151381
+- [LRV — The Standard Sanskrit–English Dictionary (L. R. Vaidya · Bombay, 1889)](https://sanskrit-lexicon.github.io/LRV/): https://doi.org/10.5281/zenodo.23151350
+- [BHS — Buddhist Hybrid Sanskrit Dictionary (Franklin Edgerton · New Haven, 1953)](https://sanskrit-lexicon.github.io/BHS/): https://doi.org/10.5281/zenodo.23151294
+- [PW — Sanskrit-Wörterbuch (Großes Petersburger Wörterbuch) (Otto Böhtlingk & Rudolph Roth · St. Petersburg, 1855–1875)](https://sanskrit-lexicon.github.io/PWG/): https://doi.org/10.5281/zenodo.22170439
+- [pw — Sanskrit-Wörterbuch in kürzerer Fassung (Otto Böhtlingk · St. Petersburg, 1879–1889)](https://sanskrit-lexicon.github.io/PWK/): https://doi.org/10.5281/zenodo.22170448
+- [SCH — Nachträge zum Sanskrit-Wörterbuch in kürzerer Fassung (Richard Schmidt · Leipzig, 1928)](https://sanskrit-lexicon.github.io/SCH/): https://doi.org/10.5281/zenodo.23151377
+- [CCS — Sanskrit-Wörterbuch (Carl Cappeller · Strassburg, 1887)](https://sanskrit-lexicon.github.io/CCS/): https://doi.org/10.5281/zenodo.23151317
+- [GRA — Wörterbuch zum Rig-Veda (Hermann Grassmann · Leipzig, 1873)](https://sanskrit-lexicon.github.io/GRA/): https://doi.org/10.5281/zenodo.23151327
+- [SKD — Śabdakalpadruma (Rājā Rādhākānta Deva · Calcutta, 1822–1858)](https://sanskrit-lexicon.github.io/SKD/): https://doi.org/10.5281/zenodo.23151389
+- [AMAR — Amarakośa (Nāmaliṅgānuśāsana) (Amarasiṃha · c. 4th–6th c. CE)](https://sanskrit-lexicon.github.io/AMAR/): https://doi.org/10.5281/zenodo.23151274
+- [VCP — Vācaspatyam (Tārānātha Tarkavācaspati · Calcutta, 1873–1884)](https://sanskrit-lexicon.github.io/VCP/): https://doi.org/10.5281/zenodo.23151393
+- [AE — The Student's English–Sanskrit Dictionary (Vaman Shivram Apte · Poona, 1884)](https://sanskrit-lexicon.github.io/ApteES/): https://doi.org/10.5281/zenodo.23151284
+- [BOR — A Practical English–Sanskrit Dictionary (Anundoram Borooah · Calcutta, 1877–1887)](https://sanskrit-lexicon.github.io/BOR/): https://doi.org/10.5281/zenodo.23151307
+- [BUR — Dictionnaire classique sanscrit-français (Émile Burnouf & Leupol · Paris, 1866)](https://sanskrit-lexicon.github.io/BUR/): https://doi.org/10.5281/zenodo.23151309
+- [KOW — Sanskrit–Russian Dictionary (Kaetan Kossowicz · St. Petersburg, 1854–1856)](https://sanskrit-lexicon.github.io/KOW/): https://doi.org/10.5281/zenodo.23151346
+- [BOP — Glossarium Sanscritum (Franz Bopp · Berlin, 1847)](https://sanskrit-lexicon.github.io/BOP/): https://doi.org/10.5281/zenodo.23151301
+- [VEI — The Vedic Index of Names and Subjects (A. A. Macdonell & A. B. Keith · London, 1912)](https://sanskrit-lexicon.github.io/VEI/): https://doi.org/10.5281/zenodo.23151395
+- [IEG — Indian Epigraphical Glossary (Dineschandra Sircar · Delhi, 1966)](https://sanskrit-lexicon.github.io/IEG/): https://doi.org/10.5281/zenodo.23151338
+- [INM — Index to the Names in the Mahābhārata (Sören Sörensen · London, 1904–1925)](https://sanskrit-lexicon.github.io/INM/): https://doi.org/10.5281/zenodo.23151343
+- [MCI — Mahābhārata Cultural Index (1993)](https://sanskrit-lexicon.github.io/MCI/): https://doi.org/10.5281/zenodo.23151357
+- [ACC — Aufrecht's Catalogus Catalogorum (Theodor Aufrecht · Leipzig, 1891–1903)](https://sanskrit-lexicon.github.io/ACC/): https://doi.org/10.5281/zenodo.23151272
+- [KRM — Kṛdantarūpamālā (1965)](https://sanskrit-lexicon.github.io/KRM/): https://doi.org/10.5281/zenodo.23151348
+- [FRI — Friš Sanskrit Reader Vocabulary (Oldřich Friš · 1956)](https://sanskrit-lexicon.github.io/FRI/): https://doi.org/10.5281/zenodo.23151323
+
+## Corpus citation
+
+- [All dictionaries, one citable release series (csl-sqlite)](https://doi.org/10.5281/zenodo.21319331): umbrella concept DOI for the whole corpus
