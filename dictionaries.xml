@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://sanskrit-lexicon.github.io/cite.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://sanskrit-lexicon.github.io/MWS/</loc>
     <lastmod>2026-07-01</lastmod>
     <priority>0.8</priority>
