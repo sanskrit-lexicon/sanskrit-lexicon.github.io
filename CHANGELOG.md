@@ -1,4 +1,4 @@
-_Created: 05-07-2026 · Last updated: 05-09-2026_
+_Created: 05-07-2026 · Last updated: 18-11-2026_
 
 # Changelog
 
@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+<!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
+
+## [0.1.1] - 2026-11-18
 ### Added
 - Standalone, deep-linkable **Cite & DOI page** (`cite.html`): hero umbrella-DOI cite line plus the
   full 37-row dictionary DOI table, JSON-LD `Dataset` identifier block (SEO playbook), and a
